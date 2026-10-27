@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stemming & Lemmatization — Activities</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+    <div class="tags">
+        <span class="badge">NLP SERIES</span>
+        <span class="category">TEXT PREPROCESSING</span>
+    </div>
+
+    <h1>Stemming & Lemmatization <span>— Activities</span></h1>
+    <p>
+        Practice telling stems and lemmas apart, then show that you can choose the
+        right method for a job. Start with the warm-up, then complete the 5 tasks.
+    </p>
+</header>
+
+<main>
+    <section class="section">
+        <p class="section-label">QUICK REFERENCE</p>
+        <div class="concept-card">
+            <h2>Two ways to reduce a word to its base</h2>
+            <div class="ref-grid">
+                <div class="ref-card">
+                    <strong>Stemming</strong>
+                    <p>Chops off word endings using fixed rules. Fast, but the result may not be a real word.</p>
+                    <span class="ex">studies → studi &nbsp;|&nbsp; running → run</span>
+                </div>
+                <div class="ref-card">
+                    <strong>Lemmatization</strong>
+                    <p>Looks the word up in a vocabulary, using its part of speech, and returns the dictionary form.</p>
+                    <span class="ex">mice → mouse &nbsp;|&nbsp; was → be</span>
+                </div>
+            </div>
+            <p class="note-line">
+                All answers in these activities use NLTK's Porter stemmer and WordNet lemmatizer.
+                Other stemmers can give different results.
+            </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <p class="section-label">WARM-UP</p>
+        <div class="concept-card interactive-card">
+            <h2>Click the words that change when lemmatized</h2>
+            <p>
+                Click every word whose lemma (dictionary form) is different from the word itself.
+                Then check your selection. Click a selected word again to deselect it.
+            </p>
+
+            <div class="sentence-selector" id="practiceSentence"></div>
+            <div class="selection-legend">
+                <span><i class="legend-dot selected-dot"></i> Selected</span>
+                <span><i class="legend-dot content-dot"></i> Not selected</span>
+            </div>
+            <button onclick="checkPractice()">Check Selection</button>
+            <div id="practiceFeedback" class="feedback"></div>
+            <div id="practiceResult" class="practice-result"></div>
+        </div>
+    </section>
+
+    <section class="section">
+        <p class="section-label">YOUR TASK</p>
+        <div class="concept-card task-card">
+            <div class="task-header">
+                <div>
+                    <h2>Stemming & Lemmatization Challenge</h2>
+                    <p class="task-instruction" id="questionInstruction"></p>
+                </div>
+                <div class="question-counter">Question <span id="currentQuestion">1</span> of 5</div>
+            </div>
+
+            <div class="question-box" id="questionBox"></div>
+            <div id="taskArea"></div>
+            <div class="selection-status" id="selectionStatus"></div>
+
+            <button onclick="checkAnswer()" id="checkButton">Check Answer</button>
+            <div id="feedback" class="feedback"></div>
+            <div id="explainBox" class="explain-box"></div>
+
+            <div class="question-navigation">
+                <button onclick="previousQuestion()" id="previousButton" class="navigation-button previous-button">← Previous</button>
+                <button onclick="nextQuestion()" id="nextButton" class="navigation-button next-button">Next →</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
